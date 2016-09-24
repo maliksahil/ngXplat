@@ -1,0 +1,13 @@
+www/IF
+!www/IF/config.ts
+!jspm.config.js
+!www/systemjs.config.js
+www/dist/bundle.js
+www/dist/bundle.js.map
+node_modules
+npm-debug.log
+platforms
+jspm_packages
+out
+.DS_Store
+npm-debug.*.*

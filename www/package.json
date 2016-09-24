@@ -1,0 +1,8 @@
+{
+    "name": "xplat-app",
+    "version": "1.0.0",
+    "build": {
+        "appId": "maliksahil",
+        "app-category-type": "maliksahil.app.xplat.electron"
+    }
+}

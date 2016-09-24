@@ -1,0 +1,88 @@
+{
+    "name": "xplat-template",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "tsc && npm run bundle && concurrently \"npm run tsc:w\" \"npm run lite\"",
+        "cordova": "tsc && npm run bundle && cordova run android",
+        "electron": "tsc && npm run bundle && concurrently \"npm run tsc:w\" \"npm run electron:dev\" ",
+        "electron:dev": "electron www/index.js --debug",
+        "bundle": "jspm bundle-sfx www/app/main www/dist/bundle.js",
+        "lite": "lite-server",
+        "tsc": "tsc",
+        "tsc:w": "tsc -w",
+        "typings": "typings install",
+        "electron:package": "npm run electron:pack-mac && npm run electron:pack-win && npm run electron:pack-linux",
+        "electron:pack-mac": "electron-packager www --asar --overwrite --platform=darwin --arch=x64 --out=out",
+        "electron:pack-win": "electron-packager www --asar --overwrite --platform=win32 --arch=ia32 --out=out",
+        "electron:pack-linux": "electron-packager www --asar --overwrite --platform=linux --arch=x64 --out=out"
+    },
+    "dependencies": {
+        "@angular/common": "2.0.0",
+        "@angular/compiler": "2.0.0",
+        "@angular/core": "2.0.0",
+        "@angular/forms": "2.0.0",
+        "@angular/http": "2.0.0",
+        "@angular/platform-browser": "2.0.0",
+        "@angular/platform-browser-dynamic": "2.0.0",
+        "@angular/router": "3.0.0",
+        "@angular/upgrade": "2.0.0",
+        "angular2-in-memory-web-api": "0.0.20",
+        "systemjs": "^0.19.38",
+        "es6-shim": "0.35.1",
+        "core-js": "^2.4.1",
+        "reflect-metadata": "^0.1.3",
+        "rxjs": "5.0.0-beta.12",
+        "zone.js": "^0.6.17",
+        "moment": "2.15.0"
+    },
+    "devDependencies": {
+        "concurrently": "^2.0.0",
+        "lite-server": "^2.2.0",
+        "typescript": "^1.8.10",
+        "typings": "^1.0.4",
+        "electron-prebuilt": "^1.4.1",
+        "electron-packager": "^8.0.0",
+        "electron-windows-store": "^0.5.0",
+        "electron-winstaller": "^2.3.4",
+        "signcode": "^0.5.0"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Sahil Malik",
+        "url": "www.winsmarts.com"
+    },
+    "keywords": [
+        "angular",
+        "electron",
+        "cordova",
+        "angular2",
+        "typescript",
+        "windows",
+        "mac",
+        "linux",
+        "ios",
+        "android"
+    ],
+    "description": "The ultimate Angular2 template that lets you create apps for every platform, web, cordova (ios, android, windows) and electron (win, mac, linux)",
+    "jspm": {
+        "configFile": "jspm.config.js",
+        "dependencies": {
+            "angular/angular": "github:angular/angular@^2.0.0",
+            "es6-shim": "npm:es6-shim@0.35.1",
+            "reflect-metadata": "npm:reflect-metadata@0.1.3",
+            "rxjs": "npm:rxjs@5.0.0-beta.12",
+            "systemjs": "npm:systemjs@^0.19.38",
+            "ts": "github:frankwallis/plugin-typescript@^4.0.16",
+            "zone.js": "npm:zone.js@0.6.17"
+        },
+        "devDependencies": {
+            "typescript": "npm:typescript@^1.6.2"
+        },
+        "overrides": {
+            "npm:reflect-metadata@0.1.3": {
+                "map": {},
+                "jspmNodeConversion": true
+            }
+        }
+    }
+}
