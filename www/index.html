@@ -1,12 +1,12 @@
 <html>
 
 <head>
-    <!-- for cordova and electron change base href to . -->
-    <base href=".">
-    <title>xplat</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-    <script type="text/javascript">  
+	<!-- for cordova and electron change base href to . -->
+	<base href=".">
+	<title>xplat</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<script type="text/javascript">  
     var isCordova = document.URL.indexOf('http://') === -1 && document.URL.indexOf('https://') === -1;
     var isElectron = window && window.process && window.process.type;
     if (isElectron) {
@@ -48,27 +48,21 @@
       if (typeof module === 'object') {window.module = module; module = undefined;}
     }
   </script>
-
-    <link rel="stylesheet" type="text/css" href="materialize/materialicons/styles.css">
-    <link rel="stylesheet" type="text/css" href="materialize/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="materialize/plugins/animate-css/animate.css">
-    <script src="materialize/jquery-2.1.1.min.js"></script>
-    <script src="materialize/js/materialize.min.js"></script>
-
-    <script src="dist/lib/core-js/client/shim.min.js"></script>
-    <script src="dist/lib/zone.js/dist/zone.min.js"></script>
-    <script src="dist/lib/reflect-metadata/Reflect.js"></script>
-    <script src="dist/lib/systemjs/dist/system.src.js"></script>
-    <script src="systemjs.config.js"></script>
+	<script src="dist/lib/core-js/client/shim.min.js"></script>
+	<script src="dist/lib/zone.js/dist/zone.min.js"></script>
+	<script src="dist/lib/reflect-metadata/Reflect.js"></script>
+	<script src="dist/lib/systemjs/dist/system.src.js"></script>
+	<script src="systemjs.config.js"></script>
 </head>
 
 <body>
-    <app>
-        <div id="loader-wrapper">
-            <div id="loader"></div>
-            <div class="loader-section section-left"></div>
-            <div class="loader-section section-right"></div>
-        </div>
-    </app>
+	<app>
+		<div id="loader-wrapper">
+			<div id="loader"></div>
+			<div class="loader-section section-left"></div>
+			<div class="loader-section section-right"></div>
+		</div>
+	</app>
 </body>
+
 </html>

@@ -30,8 +30,7 @@
         },
         "@angular/router": {
             main: "bundles/router.umd.js" //use the ESM entry point for bundling tools
-        },
-        'moment': { main: 'moment.min.js', defaultExtension: 'js' }
+        }
     };
     var packageNames = [
         '@angular/testing',
@@ -55,9 +54,7 @@
             '@angular': baseUrl + 'dist/lib/@angular',
             'rxjs': baseUrl + 'dist/lib/rxjs',
             'angular2-in-memory-web-api': baseUrl + 'dist/lib/angular2-in-memory-web-api',
-            'zonejs': baseUrl + 'dist/lib/zone.js/dist',
-            'IF': baseUrl + 'IF',
-            'moment': baseUrl + 'dist/lib/moment'
+            'zonejs': baseUrl + 'dist/lib/zone.js/dist'
         }
     });
 

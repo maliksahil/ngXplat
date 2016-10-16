@@ -1,45 +1,66 @@
 System.defaultJSExtensions = true;
-System.defaultJSExtensions = true;
 var packages = {
-  'app': { main: 'main.js', defaultExtension: 'js' },
-  'rxjs': { defaultExtension: 'js' },
-  'angular2-in-memory-web-api': { defaultExtension: 'js' },
-  'moment': { main: 'moment.min.js', defaultExtension: 'js'}
-
+    'app': { main: 'main.js', defaultExtension: 'js' },
+    'rxjs': { defaultExtension: 'js' },
+    'angular2-in-memory-web-api': { defaultExtension: 'js' },
+    "@angular/core": {
+        main: "bundles/core.umd.js"
+    },
+    "@angular/common": {
+        main: "bundles/common.umd.js"
+    },
+    "@angular/compiler": {
+        main: "bundles/compiler.umd.js"
+    },
+    "@angular/forms": {
+        main: "bundles/forms.umd.js"
+    },
+    "@angular/http": {
+        main: "bundles/http.umd.js"
+    },
+    "@angular/platform-browser": {
+        main: "bundles/platform-browser.umd.js"
+    },
+    "@angular/platform-browser-dynamic": {
+        main: "bundles/platform-browser-dynamic.umd.js"
+    },
+    "@angular/router": {
+        main: "bundles/router.umd.js"
+    },
+    'angular2-in-memory-web-api': { defaultExtension: 'js' },
+    'zonejs': { main: "dist/zone.min.js", defaultExtension: 'js' },
+    'reflect-metadata': { main: "reflect.js", defaultExtension: 'js' }
 };
 var packageNames = [
-  "@angular/common",
-  "@angular/compiler",
-  "@angular/core",
-  "@angular/forms",
-  "@angular/http",
-  "@angular/platform-browser",
-  "@angular/platform-browser-dynamic",
-  "@angular/router",
-  "@angular/router-deprecated",
-  '@angular/testing',
-  "@angular/upgrade",
-  "angular2-in-memory-web-api",
-  "rxjs",
-  "zonejs"
+    '@angular/testing',
+    "@angular/upgrade",
+    "angular2-in-memory-web-api",
+    "rxjs",
+    "zonejs",
+    "reflect-metadata"
 ];
 
 packageNames.forEach(function (pkgName) {
-  if (pkgName !== "zonejs") {
-    packages[pkgName] = { main: 'index.js', defaultExtension: 'js' };
-  } else {
-    packages[pkgName] = { main: 'zone.min.js', defaultExtension: 'js' };
-  }
+    switch (pkgName) {
+        case "zonejs":
+            packages[pkgName] = { main: 'zone.min.js', defaultExtension: 'js' };
+            break;
+        case "reflect-metadata":
+            packages[pkgName] = { main: 'reflect.js', defaultExtension: 'js' };
+            break;
+        default:
+            packages[pkgName] = { main: 'index.js', defaultExtension: 'js' };
+            break;
+    }
 });
 
 System.config({
-  packages: packages,
-  map: {
-    '@angular': 'www/dist/lib/@angular',
-    'zonejs': 'www/dist/lib/zone.js/dist',
-    'rxjs': 'www/dist/lib/rxjs',
-    'angular2-in-memory-web-api':'www/dist/lib/angular2-in-memory-web-api',    
-    'IF': 'www/IF',
-    'moment': 'www/dist/lib/moment'
-  }
+    packages: packages,
+    map: {
+        '@angular': 'node_modules/@angular',
+        'zonejs': 'node_modules/zone.js/dist',
+        'rxjs': 'node_modules/rxjs',
+        'reflect-metadata': 'node_modules/reflect-metadata',
+        'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api'
+    }
 });
