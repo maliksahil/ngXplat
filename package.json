@@ -37,7 +37,7 @@
     "devDependencies": {
         "concurrently": "^2.0.0",
         "lite-server": "^2.2.0",
-        "typescript": "^1.8.10",
+        "typescript": "^2.0.3",
         "typings": "^1.0.4",
         "electron-prebuilt": "^1.4.1",
         "electron-packager": "^8.0.0",

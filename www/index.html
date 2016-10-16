@@ -48,21 +48,22 @@
       if (typeof module === 'object') {window.module = module; module = undefined;}
     }
   </script>
-	<script src="dist/lib/core-js/client/shim.min.js"></script>
+  <script src="dist/lib/es6-shim/es6-shim.js"></script>
+  <!--To run unbundled uncomment the below-->
+	<!--<script src="dist/lib/core-js/client/shim.min.js"></script>
 	<script src="dist/lib/zone.js/dist/zone.min.js"></script>
 	<script src="dist/lib/reflect-metadata/Reflect.js"></script>
 	<script src="dist/lib/systemjs/dist/system.src.js"></script>
-	<script src="systemjs.config.js"></script>
+	<script src="systemjs.config.js"></script>-->
 </head>
 
 <body>
 	<app>
-		<div id="loader-wrapper">
-			<div id="loader"></div>
-			<div class="loader-section section-left"></div>
-			<div class="loader-section section-right"></div>
-		</div>
+        Loading ...
 	</app>
+  <script src="cordova.js"></script>
+  <!--To run unbundled comment the below-->
+  <script src="dist/bundle.js"></script>    
 </body>
 
 </html>
