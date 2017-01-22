@@ -11,6 +11,11 @@ c) Electron apps targeting Mac, Windows and Linux
 
 **Just write the app once and run everywhere (yeah really!)**
 
+Here is a short 10 minute video that builds an app for Android/Windows/Web/iOS/Mac..etc. in .. yeah 10 minutes.
+
+[![Write once run everywhere](http://img.youtube.com/vi/Umhb5a8no_U/0.jpg)](http://www.youtube.com/watch?v=Umhb5a8no_U "Write Once Run Everywhere")
+
+
 The idea being, write your angular2 app in the "www" folder and package it and run it everywhere.
 
 Instructions: 
