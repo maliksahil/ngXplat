@@ -2,12 +2,11 @@
   "name": "xplat-template",
   "version": "1.0.0",
   "scripts": {
-    "start": "tsc && npm run bundle && concurrently \"npm run tsc:w\" \"npm run lite\"",
+    "start":"tsc && npm run bundle && webpack-dev-server --port 4200 --colors --watch --content-base www",
+    "bundle":"webpack --config webpack.config.js --source-map",
     "cordova": "tsc && npm run bundle && cordova run android",
     "electron": "tsc && npm run bundle && concurrently \"npm run tsc:w\" \"npm run electron:dev\" ",
     "electron:dev": "electron www/index.js --debug",
-    "bundle": "jspm bundle-sfx www/app/main www/dist/bundle.js",
-    "lite": "lite-server",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings install",
@@ -30,21 +29,25 @@
     "zone.js": "^0.7.2",
     "systemjs": "^0.19.38",
     "es6-shim": "0.35.1",
-    "reflect-metadata": "^0.1.9"
+    "reflect-metadata": "^0.1.9",
+    "moment":"^2.15.2"
   },
   "devDependencies": {
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.42",
-    "@types/es6-shim":"0.31.32",
-    "concurrently": "^2.0.0",
-    "lite-server": "^2.2.0",
     "typescript": "^2.0.3",
     "typings": "^1.0.4",
-    "electron-prebuilt": "^1.4.1",
-    "electron-packager": "^8.0.0",
-    "electron-windows-store": "^0.5.0",
-    "electron-winstaller": "^2.3.4",
-    "signcode": "^0.5.0"
+    "concurrently": "3.1.0",
+    "electron": "^1.4.15",
+    "electron-packager": "^8.5.0",
+    "electron-windows-store": "^0.8.1",
+    "electron-winstaller": "^2.5.1",
+    "signcode": "^0.5.0",
+    "webpack": "^1.14.0",
+    "webpack-dev-server":"^1.16.2",
+    "ts-loader":"1.3.3",
+    "html-loader":"0.4.4",
+    "css-loader":"0.26.1"
   },
   "license": "MIT",
   "author": {
@@ -63,29 +66,5 @@
     "ios",
     "android"
   ],
-  "description": "The ultimate Angular2 template that lets you create apps for every platform, web, cordova (ios, android, windows) and electron (win, mac, linux)",
-  "jspm": {
-    "configFile": "jspm.config.js",
-    "dependencies": {
-      "@angular/common": "npm:@angular/common@2.3.1",
-      "@angular/compiler": "npm:@angular/compiler@2.3.1",
-      "@angular/core": "npm:@angular/core@2.3.1",
-      "@angular/forms": "npm:@angular/forms@2.3.1",
-      "@angular/http": "npm:@angular/http@2.3.1",
-      "@angular/platform-browser": "npm:@angular/platform-browser@2.3.1",
-      "@angular/platform-browser-dynamic": "npm:@angular/platform-browser-dynamic@2.3.1",
-      "@angular/router": "npm:@angular/router@3.3.1",
-      "core-js": "npm:core-js@^1.1.4",
-      "es6-shim": "npm:es6-shim@0.35.1",
-      "reflect-metadata": "npm:reflect-metadata@0.1.9",
-      "rxjs": "npm:rxjs@5.0.1",
-      "systemjs": "npm:systemjs@0.19.38",
-      "ts": "github:frankwallis/plugin-typescript@4.0.16",
-      "zonejs": "npm:zone.js@0.7.2"
-    },
-    "devDependencies": {
-      "babel": "npm:babel-core@^5.8.24",
-      "babel-runtime": "npm:babel-runtime@^5.8.24"
-    }
-  }
+  "description": "The ultimate Angular2 template that lets you create apps for every platform, web, cordova (ios, android, windows) and electron (win, mac, linux)"
 }

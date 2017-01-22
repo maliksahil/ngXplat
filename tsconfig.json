@@ -6,17 +6,20 @@
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "lib": ["es6", "dom"],
     "removeComments": true,
     "noImplicitAny": false,
     "allowJs": false,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ]
   },
   "exclude": [
     "plugins",
     "platforms",
     "node_modules",
     "typings/globals/cordova/**/*.*",
-    "jspm_packages",
     "www/dist",
     ".vscode"
   ]
